@@ -1,41 +1,43 @@
+ECHO "Performing ECHO colors test:" ;
 #
-# Copyright (c) 2020 Mateusz Loskot <mateusz@loskot.net>
+ECHO "red foreground, default background" : red ;
+ECHO "green foreground, default background" : green ;
+ECHO "yellow foreground, default background" : yellow ;
+ECHO "blue foreground, default background" : blue ;
+ECHO "magenta foreground, default background" : magenta ;
+ECHO "cyan foreground, default background" : cyan ;
+ECHO "white foreground, default background" : white ;
 #
-# Use, modification and distribution is subject to the Boost Software License,
-# Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
-# http://www.boost.org/LICENSE_1_0.txt)
+ECHO "red-bold foreground, default background" : red-bold ;
+ECHO "green-bold foreground, default background" : green-bold ;
+ECHO "yellow-bold foreground, default background" : yellow-bold ;
+ECHO "blue-bold foreground, default background" : blue-bold ;
+ECHO "magenta-bold foreground, default background" : magenta-bold ;
+ECHO "cyan-bold foreground, default background" : cyan-bold ;
+ECHO "white-bold foreground, default background" : white-bold ;
+# 
+ECHO "red foreground, white background" : red white ;
+ECHO "green foreground, white background" : green white ;
+ECHO "yellow foreground, blue background" : yellow blue ;
+ECHO "blue foreground, yellow background" : blue yellow ;
+ECHO "magenta foreground, green background" : magenta green ;
+ECHO "cyan foreground, yellow background" : cyan yellow ;
+ECHO "white foreground, black background" : white black ;
 #
-import os ;
-import testing ;
+ECHO "red foreground, white-bold background" : red white-bold ;
+ECHO "green foreground, white-bold background" : green white-bold ;
+ECHO "yellow foreground, blue-bold background" : yellow blue-bold ;
+ECHO "blue foreground, yellow-bold background" : blue yellow-bold ;
+ECHO "magenta foreground, green-bold background" : magenta green-bold ;
+ECHO "cyan foreground, yellow-bold background" : cyan yellow-bold ;
+ECHO "white foreground, black-bold background" : white black-bold ;
+#
+ECHO "red-bold  foreground, white-bold background" : red-bold white-bold ;
+ECHO "green-bold  foreground, white-bold background" : green-bold white-bold ;
+ECHO "yellow-bold  foreground, blue-bold background" : yellow-bold blue-bold ;
+ECHO "blue-bold  foreground, yellow-bold background" : blue-bold yellow-bold ;
+ECHO "magenta-bold  foreground, green-bold background" : magenta-bold green-bold ;
+ECHO "cyan-bold  foreground, yellow-bold background" : cyan-bold yellow-bold ;
+ECHO "white-bold  foreground, black-bold background" : white-bold black-bold ;
 
-local B2_ADDRESS_MODEL = [ os.environ B2_ADDRESS_MODEL ] ;
-local B2_CXXFLAGS = [ os.environ B2_CXXFLAGS ] ;
-local B2_CXXSTD = [ os.environ B2_CXXSTD ] ;
-local B2_DEFINES = [ os.environ B2_DEFINES ] ;
-local B2_INCLUDE = [ os.environ B2_INCLUDE ] ;
-local B2_JOBS = [ os.environ B2_JOBS ] ;
-local B2_LINK = [ os.environ B2_LINK ] ;
-local B2_LINKFLAGS = [ os.environ B2_LINKFLAGS ] ;
-local B2_TESTFLAGS = [ os.environ B2_TESTFLAGS ] ;
-local B2_THREADING = [ os.environ B2_THREADING ] ;
-local B2_TOOLSET = [ os.environ B2_TOOLSET ] ;
-local B2_VARIANT = [ os.environ B2_VARIANT ] ;
-local BOOST_ROOT = [ os.environ BOOST_ROOT ] ;
-
-ECHO "Running boostorg/boost-ci environment checks:" ;
-ECHO "  B2_ADDRESS_MODEL:" $(B2_ADDRESS_MODEL) ;
-ECHO "  B2_CXXFLAGS:" $(B2_CXXFLAGS) ;
-ECHO "  B2_CXXSTD:" $(B2_CXXSTD) ;
-ECHO "  B2_DEFINES:" $(B2_DEFINES) ;
-ECHO "  B2_INCLUDE:" $(B2_INCLUDE) ;
-ECHO "  B2_JOBS:" $(B2_JOBS) ;
-ECHO "  B2_LINK:" $(B2_LINK) ;
-ECHO "  B2_LINKFLAGS:" $(B2_LINKFLAGS) ;
-ECHO "  B2_TESTFLAGS:" $(B2_TESTFLAGS) ;
-ECHO "  B2_THREADING:" $(B2_THREADING) ;
-ECHO "  B2_TOOLSET:" $(B2_TOOLSET) ;
-ECHO "  B2_VARIANT:" $(B2_VARIANT) ;
-ECHO "  BOOST_ROOT:" $(BOOST_ROOT) ;
-ECHO ;
-
-unit-test test : test.cpp ;
+compile test.cpp ;
